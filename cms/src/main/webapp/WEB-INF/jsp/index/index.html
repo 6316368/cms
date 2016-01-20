@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/web.css"/>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery.cycle2.min.js"></script>
+<style type="text/css">
+ #rollCaption{
+ position: absolute;
+ background: #000;
+ color: #fff;
+ width: 100%;
+ bottom:-12px;
+ z-index: 9999;
+ }
+ #rollCaption span{
+ position: relative;
+ top: 0px;
+ left: 10px;
+ }
+  #rollpicPager {
+ position:absolute;
+ z-index: 9999;
+ right: 0px;
+ bottom: -10px;
+ }
+  #rollpicPager span{
+ font-size: 30px;
+ float: left;
+ display: block;
+ color: #999;
+ cursor: pointer;
+ padding: 5px;
+ }
+ 
+ #rollpicPager span.cycle-pager-active{
+ color: #3a4;
+ }
+</style>
+<script type="text/javascript">
+$(function(){
+	$("#rollpic").cycle({
+		fx:"fadeout",
+	    pauseonhover:"true",
+	    slides:"> a",
+	    caption:"#rollCaption span",
+	    captionTemplate:"{{title}}",
+	    pager:"#rollpicPager"
+	});
+	$("#rollCaption ").css("opacity",0.5);
+	$("#rollpic").hover(function(){
+		$("#rollCaption").show(1000);
+	},function(){
+		$("#rollCaption").hide(1000);
+	});
+	$("#content").height($("#content_con").height());
+	$("#search_con").css("opacity",0.5);
+	var searchvalue;
+	$("#search_con").focus(function(){
+		searchvalue=$(this).val();
+		$("#search_con").css("opacity",1.0);
+		$(this).val("");
+	});
+	$("#search_con").blur(function(){
+		if($(this).val()==""){
+		$(this).css("opacity",0.5);
+		$(this).val(searchvalue);
+	}
+	});
+	$("#nav_con ul li ").hover(function(){
+	 $(this).addClass("nav_hover");	
+	},function(){
+	  $(this).removeClass("nav_hover");	
+	});
+	$("#cheif_keyword div span ").hover(function(){
+		$(this).removeClass("keyword");
+		 $(this).addClass("keyword_hover");	
+		},function(){
+	      $(this).addClass("keyword");
+		  $(this).removeClass("keyword_hover");	
+    });
+	$("#cheif_keyword div span ").click(function(){
+		window.location.href=$(this).attr("href")	
+    });
+});
+</script>
+</head>
+<body>
+  <div id="header">
+    <div  id="header_con">
+      <div id="logo"></div>
+      <div id="main_nav">
+		<ul>
+			<li><a class="main_nav_link" href="http://www.ztu.edu.cn">昭通学院首页</a></li>
+			<li><a class="main_nav_link" href="<%=request.getContextPath()%>/channel/5">勤耕园</a></li>
+			<li><a class="main_nav_link" href="<%=request.getContextPath()%>/admin">后台管理</a></li>
+			<li><a class="main_nav_link" href="mailto:11@111.com">联系我们</a></li>
+		</ul>
+	  </div>
+	  <div id="search">
+			<input type="text" id="search_con" value="Search.." />
+			<div id="search_btn"></div>
+		</div>
+    </div>
+  </div>
+  <div id="nav">
+    <div  id="nav_con">
+      <ul>
+			   <li>
+			      <span href="<%=request.getContextPath()%>/index">附中首页</span>
+			   </li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/1">学校简介</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/2">校园之窗</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/3">教育科研</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/4">德育园地</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/8">师生风采</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/22">学生工作</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/18">学科资源</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/28">校园文化</span>
+				</li>
+				<li>
+					<span href="<%=request.getContextPath()%>/channel/13">党团工作</span>
+				</li>
+		</ul>
+    </div>
+  </div>
+  <div  id="content">
+    <div  id="content_con">
+      <div id="xiaoxun"></div>
+       <div id="notice_rollpic">
+         <div  id="notice">
+           <dl>
+             <dt><span>校内通知</span></dt>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+           </dl>
+         </div> 
+         <div id="rollpic" > 
+         <!-- 加滚动图片的页码 -->
+          <div  class="cycle-caption"></div>
+          <div id="rollCaption"><span></span></div>
+          <div id="rollpicPager"></div>
+          <a href="http://www.baidu.com" target="blank" title="aaaa"> <img  src="img/01.jpg" width="695" height="262"></img></a>
+           <a href="#" title="ccc"><img src="img/01.jpg" width="695" height="262"></img></a>
+           <a href="#" title="ddd"><img  src="img/01.jpg" width="695" height="262"></img></a>
+           <a href="#" title="qqq"><img  src="img/01.jpg" width="695" height="262"></img></a>
+          <a href="#"  title="sss"> <img  src="img/01.jpg" width="695" height="262"></img></a>
+         </div>
+         <div  id="split_line"></div>
+	     <div  id="xwgk_xxgk">
+	           <div  id="xwgk">
+	             <h3>校务公开</h3>
+	             <div  id="xwgk_bg"></div>
+	             <dl>
+		             <dd><a href="#" class="index_link">关于****dddddddd*****的通知</a></dd>
+		             <dd><a href="#" class="index_link">关于*****dddddddddbfhbhjgbfhjhdjfhdfhbbhjbfhjddddddddddd****的通知</a></dd>
+		             <dd><a href="#" class="index_link">关于*****dddddd****的通知</a></dd>
+		             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+		             <dd><a href="#" class="index_link">关于****dddddddddddddd*****的通知</a></dd>
+		             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+		             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+                </dl>
+	           </div>
+	         <div  id="xxgk">
+	          <h3>校务公开</h3>
+	          <div  id="xxgk_bg"></div>
+	           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 规范更健康符合国家放假不符合覆盖几号的淡淡的淡淡的淡淡的放假咖啡馆回个胡日更好刚好赶快加入回顾和退货空间分布更好瑞更好的女兵的还
+	                          不够不放过绝不放过尖锐更好如果IU活佛济公呼庚呼癸I胡歌I好返回给客户股过户工会经费几个号北方工业风格与
+	                          风格白胡椒粉gay复古一个人与光荣光荣与热的不V好vb东风雨噶U二个户菊花句比较好噶与噶U俄一个电话举报后
+	                          感觉哈嘎哈U一个户电话V具备付一个哈V的vb的吧U有噶凤凰谷
+	                          规范更健康符合国家放假不符合覆盖几号的淡淡的淡淡的淡淡的放假咖啡馆回个胡日更好刚好赶快加入回顾和退货空间分布更好瑞更好的女兵的还
+	                          不够不放过绝不放过尖锐更好如
+	         </div>
+	         
+	         </div>
+         <div id="hdjx_jyky">
+           <div  id="hdjx">
+            <dl>
+             <dt><span class="t_title">活动简讯</span><span class="more t_title"><a href="#">更多</a></span></dt>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+            
+           </dl>
+           </div>
+           <div  id="jyky">
+            <dl>
+	             <dt><span class="t_title ">教育科研</span><span class="more t_title"><a href="#">更多</a></span></dt>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+	             <dd><a href="#" class="index_link">关于*********的通知</a></dd>
+           </dl> 
+           
+           </div>
+         </div>
+         <div id="cheif_keyword"> 
+           <div>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>      
+             <span class="keyword" href="#">中国七本</span> 
+             <span class="keyword" href="#">中国七本</span>        
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span>
+             <span class="keyword" href="#">中国七本</span> 
+             <span class="keyword" href="#">中国七本</span> 
+             <span class="keyword" href="#">中国七本</span>        
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+  
+  
+  <div  id="bottom">
+    <div  id="bottom_con">
+      <div  id="thzf">
+                 昭通师专附中研发
+      </div>
+      <div  id="copyright">
+         <p>昭通师专附中   版权所有</p>
+          <p>Copyright 2013-2017</p>
+      </div>
+      <div  id="jszc">
+                 技术支持:<a href="mailto:ynkonghao@gmail.com" class="main_nav_link">ynkonghao@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

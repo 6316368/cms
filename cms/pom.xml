@@ -1,0 +1,302 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.kongkao.cms</groupId> 
+  <artifactId>cms</artifactId>
+  <packaging>war</packaging>
+  <name>cms Maven Webapp</name>
+  <version>0.0.1-SNAPSHOT</version>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>3.2.2.RELEASE</spring.version>
+  </properties>
+  <dependencies>
+  		<dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+		  <version>4.10</version>
+		  <scope>test</scope>
+	    </dependency>
+	    <!-- spring需要的jar -->
+	    <!-- spring测试是使用 -->
+	    <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- 使用spring的dbunit整合来进行测试 -->
+	    <dependency>
+			<groupId>com.github.springtestdbunit</groupId>
+			<artifactId>spring-test-dbunit</artifactId>
+  			<version>1.0.0</version>
+  			<scope>test</scope>
+		</dependency>
+		<!-- 使用dbunit来进行测试 -->
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>2.4.9</version>
+			<scope>test</scope>
+		</dependency>
+		
+		 <!-- JSR 303 用于对Java Bean 中的字段的值进行验证。  -->
+	    <dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>jsr303</artifactId>
+			<version>1.5-RC5.1</version>
+		</dependency>
+	    <!-- hibernate的验证 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.1.Final</version>
+		</dependency>
+		<!-- 使用hibernate4所需的jar包 -->
+	    
+<!-- 		<dependency> -->
+<!-- 	<groupId>org.apache.httpcomponents</groupId> -->
+<!-- 	<artifactId>httpclient</artifactId> -->
+<!-- 	<version>4.5</version> -->
+<!-- </dependency> -->
+		
+		<!-- 使用springmvc需要的jar -->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-webmvc</artifactId>
+		  <version>3.2.2.RELEASE</version>
+		</dependency>
+		<!-- 使用 freemarker时所需的jar包-->
+		<dependency>
+		  <groupId>org.freemarker</groupId>
+		  <artifactId>freemarker</artifactId>
+		  <version>2.3.20</version>
+		</dependency>
+		<!-- 使用pager-taglib来进行分页 -->
+		<dependency>
+		  <groupId>jsptags</groupId>
+		  <artifactId>pager-taglib</artifactId>
+		  <version>2.0</version>
+		</dependency>
+	    
+	    <!-- 使用 easymock来进行service的验证-->
+  		<dependency>
+		  <groupId>org.easymock</groupId>
+		  <artifactId>easymock</artifactId>
+		  <version>3.1</version>
+		  <scope>test</scope>
+		</dependency>
+	    <dependency>
+		  <groupId>commons-lang</groupId>
+		  <artifactId>commons-lang</artifactId>
+		  <version>2.6</version>
+		</dependency>
+		<!-- mysql使用时所需的jar包 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.24</version>
+		</dependency>
+		<!-- 在hibernate4中使用inject来实现注入，不在使用resources -->
+		<dependency>
+			<groupId>com.kenai.nbpwr</groupId>
+			<artifactId>javax-inject</artifactId>
+			<version>1.0-201002241208</version>
+		</dependency>
+		<!-- 使用dbcp的数据源 -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- 使用日志 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<!--不知道为什么加入这个包，但是如果不加入的话程序启动的时候会报错 好像是dbcp所依赖的jar包-->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<!-- 加入servlet的依赖包 -->
+		<dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>servlet-api</artifactId>
+		  <version>2.5</version>
+		  <scope>provided</scope>
+		</dependency>
+		<!-- 在jsp页面使用jstl标签的时候使用时需要加入 -->
+		<dependency>
+		  <groupId>jstl</groupId>
+		  <artifactId>jstl</artifactId>
+		  <version>1.2</version>
+		</dependency>
+		<!-- jsp页面和servlet需要加入的包 -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<!--上传的时候需要实用的jar包 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<!-- 使用io操作同时也是struts2中所依赖的包 -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+            
+		<!-- Thumbnailator是一个用来生成图像缩略图的 Java类库，
+		通过很简单的代码即可生成图片缩略图，也可直接对一整个目录的图片生成缩略图 -->
+		<dependency>
+		  <groupId>net.coobird</groupId>
+		  <artifactId>thumbnailator</artifactId>
+		  <version>0.4.3</version>
+		</dependency>
+		<!-- 用以实现将文件压缩或解压成 tar、zip、bzip2 等格式。 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<!-- samba的使用包 -->
+		<dependency>
+			<groupId>org.samba.jcifs</groupId>
+			<artifactId>jcifs</artifactId>
+			<version>1.3.3</version>
+		</dependency>
+		
+		
+		<!-- struts2依赖的包 -->
+		<dependency>
+         <groupId>commons-beanutils</groupId>
+         <artifactId>commons-beanutils</artifactId>
+         <version>1.8.3</version>
+        </dependency>
+        
+        <!-- 使用 jackson时所依赖的三个jar包-->
+        <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.1.4</version>
+       </dependency>
+       <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.1.4</version>
+       </dependency>
+       <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>2.1.4</version>
+       </dependency>
+	   
+	   
+	   <dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>2.10.4</version>
+		</dependency>
+	   <!-- 使用拼音的包 -->
+	   <dependency>
+	    <groupId>com.belerweb</groupId>
+	    <artifactId>pinyin4j</artifactId>
+        <version>2.5.0</version>
+      </dependency>
+	   
+	   <!-- 导入dwr的jar包 -->
+		<dependency>
+		   <groupId>org.directwebremoting</groupId>
+		   <artifactId>dwr</artifactId>
+		   <version>3.0.0-RELEASE</version>
+		 </dependency>
+
+
+
+
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-cypher-compiler-2.1</artifactId>
+			<version>2.1.5</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.httpcomponents</groupId> -->
+<!-- 			<artifactId>httpclient</artifactId> -->
+<!-- 			<version>4.3.5 </version> -->
+<!-- 		</dependency> -->
+		
+  </dependencies>
+  <build>
+  	<pluginManagement>
+  		<plugins>
+  			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>3.0</version>
+		        <configuration>
+		          <source>1.6</source>
+		          <target>1.6</target>
+		        </configuration>
+		      </plugin>
+		      <plugin>
+			  <groupId>org.mortbay.jetty</groupId>
+			  <artifactId>jetty-maven-plugin</artifactId>
+			  <configuration>
+			    <scanIntervalSeconds>10</scanIntervalSeconds>
+			    <webApp>
+			      <contextPath>/cms</contextPath>
+			    </webApp>
+			    <connectors>
+			       <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+			          <port>8888</port>
+			          <maxIdleTime>60000</maxIdleTime>
+			          
+			       </connector>
+			     </connectors>
+			  </configuration>
+			</plugin>
+  		</plugins>
+  	</pluginManagement>
+  </build>
+</project>

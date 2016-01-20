@@ -1,0 +1,274 @@
+@CHARSET "UTF-8";
+*{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+body {
+	background:#f3ece2;
+}
+#header {
+	height:108px;
+	background: url(../img/header_bg.jpg) repeat-x;
+}
+#nav {
+	height:35px;
+	background: #1a5688;
+}
+#content {
+}
+#bottom {
+	height:88px;
+	width:100%;
+	background: url(../img/bottom_bg.jpg) repeat-x;
+	float: left;
+}
+#header_con,#nav_con,#content_con,#bottom_con {
+	width:962px;
+	position:absolute;
+	left:50%;
+	margin-left:-481px;
+}
+#logo {
+	width:320px;
+	height:108px;
+	background: url(../img/logo.jpg) no-repeat;
+	float:left;
+}
+#main_nav {
+	float: right;
+}
+#main_nav  ul{
+	margin-right: 10px;
+	margin-top: 5px;
+}
+#main_nav  li{
+	float: left;
+	list-style: none;
+	padding:0px 7px;
+	border-right: 1px solid #fff;
+}
+a.main_nav_link:link,a.main_nav_link:VISITED{
+text-decoration: none;
+color: white;
+}
+a.main_nav_link:HOVER{
+color: #ff0;
+text-decoration: underline;
+}
+#search{
+position: absolute;
+left:767px;
+top:56px;
+background:url(../img/search_bg.jpg);
+width:183px;
+height:20px;
+}
+#search_con {
+	height:17px;
+	position: absolute;
+	left:5px;
+	top:1px;
+	width:152px;
+	border:none;
+}
+#search_btn {
+	position: absolute;
+	left:156px;
+	width:25px;
+	height:20px;
+	cursor: pointer;
+}
+#nav_con ul li {
+	list-style: none;
+	float:left;
+	width:96px;
+	height:35px;
+ 	text-align:center; 
+ 	cursor: pointer; 
+}
+ #nav_con ul li span { 
+ 	position: relative; 
+ 	top:10px; 
+ 	color:#fff; 
+ 	text-decoration: none; 
+ } 
+ .nav_hover { 
+ 	background:#993; 
+} 
+#content_con { 
+ 	background: #fff;
+ } 
+ #xiaoxun{
+ width: 962px;
+ height: 84px;
+ background:url(../img/xiaoxun.jpg) no-repeat; 
+ }
+ #notice_rollpic{
+ width: 960px;
+ }
+ #notice{
+ float: left;
+ width: 233px;
+ border: 0px solid red;
+ margin-left: 10px;
+ }
+ #notice  dt{
+ height: 28px;
+ border-bottom: 3px solid #eae6e4;
+ color: #1a5688
+ }
+ #notice  dt  span{
+ position: relative;
+ top: 6px;
+ left:6px;
+ }
+ #notice  dd,#xwgk  dd,#hdjx dd,#jyky  dd{
+ padding: 6px 0px;
+ border-bottom:1px dashed #999; 
+ margin-left: 4px;
+ }
+ a.index_link:link,a.index_link:VISITED{
+ text-decoration: none;
+ color: #666;
+ background: url(../img/topic_dot.jpg) no-repeat;
+ background-position: 0 50%;
+ padding-left: 10px; 
+ }
+ a.index_link:HOVER{
+ text-decoration: none;
+ color: #833;
+ }
+ #rollpic{
+ float:left;
+ width: 695px;
+ height:250px;
+ border:1px solid #999;
+ margin-left:10px;
+ }
+ #split_line{
+  background: #ccc;
+  height: 3px;
+  width: 942px;
+  margin-top: 10px;
+  margin-left:10px;
+  float: left;
+ }
+ #xwgk_xxgk,#hdjx_jyky, #cheif_keyword,#cheif_keyword div {
+  float: left;
+  margin:10px 5px  10px  5px;
+  width: 942px;
+ }
+ #xwgk{
+ width: 520px;
+ float: left;
+ border:0px solid #999;
+ }
+ #xwgk h3{
+color: #705a5c;
+padding: 10px;
+ }
+ #xwgk #xwgk_bg{
+ width520px;
+ height:91px;
+  background: url(../img/xwgk_bg.jpg) no-repeat;
+ }
+ #xxgk{
+ width: 400px;
+ border:0px solid red;
+ float: left;
+ margin-left: 20px;
+ line-height: 25px;
+ color: #636363;
+ 
+ }
+ #xxgk h3{
+color: #705a5c;
+border-bottom: 5px solid #a32430;
+padding: 5px;
+padding-top: 10px;
+margin-bottom: 5px;
+line-height: normal;
+ }
+ #xxgk_bg{
+ width:130px;
+ height:128px;
+ float:left;
+ background: url(../img/xxgk_bg.jpg) no-repeat;
+ }
+ #hdjx,#jyky{
+ float:left;
+ width:450px;
+ }
+ #hdjx dt,#jyky dt{
+ width:450px;
+ height:27px;
+ background: url(../img/hdjx_title_bg.jpg) no-repeat;
+ }
+#jyky dt{
+ background: url(../img/jyky_title_bg.jpg) no-repeat;
+ } 
+ #hdjx dt .t_title,#jyky dt .t_title{
+    font-weight:bold;
+    position: relative; 
+ 	top:5px; 
+ 	left:10px;
+ 	
+ }
+ #hdjx dt .more,#jyky dt .more{
+    font-weight:bold;
+    position: relative; 
+ 	top:5px; 
+ 	left:360px;
+ 	text-decoration: none;
+ }
+#hdjx_jyky .more a:LINK,#hdjx_jyky .more a:VISITED{
+color: white;	
+text-decoration: none;
+}
+#hdjx_jyky .more a:HOVER{
+color: #347;	
+text-decoration: underline;
+}
+ #jyky{
+ margin-left: 35px;
+ }
+ #cheif_keyword{
+ border:0px solid red; 
+ }
+ #cheif_keyword div {
+  border-left:4px solid #266197;
+ }
+span.keyword {
+padding: 4px;
+margin: 4px;
+float: left;
+background: #698911;
+color: #fff;
+cursor: pointer;
+ }
+span.keyword_hover{
+background: #732;
+padding: 4px;
+margin: 4px;
+float: left;
+color: #fff;
+cursor: pointer;
+ }
+ #bottom_con  div{
+ float: left;
+ color: #fff;
+ position: relative;
+ top: 30px;
+ }
+ #thzf  {
+ left: 10px;
+ }
+ #copyright  {
+ position: relative; 
+ left: 35%;
+ }
+ #jszc {
+ position: relative; 
+ left: 55%;
+ }

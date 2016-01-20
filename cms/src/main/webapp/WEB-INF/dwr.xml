@@ -1,0 +1,16 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://getahead.org/dwr/dwr30.dtd">
+
+<dwr>
+  <allow>
+    <create creator="spring"  javascript="dwrService">
+      <param name="beanName" value="dwrService"/>
+      <exclude  method="getGroupservice"/>
+      <exclude  method="setGroupservice"/>
+    </create>
+    <!-- 这是dwr的异常处理 -->
+    <convert match="java.lang.Exception" converter="exception"></convert>
+    <convert match="java.lang.StackTraceElement" converter="bean"></convert>
+  </allow>
+</dwr>
